@@ -5,16 +5,22 @@
 
 /* --- Değişkenler ve Tema Tanımları (Ödev Renk Paleti) --- */
 :root {
-    --primary-color: #0097a7; /* Mavi-Turkuaz arası ana renk */
-    --primary-hover: #006064; /* Butonların hover rengi */
-    --bg-light: #f4fbfb;       /* Açık turkuaz arka plan tonu */
+    --primary-color: #0097a7;
+    /* Mavi-Turkuaz arası ana renk */
+    --primary-hover: #006064;
+    /* Butonların hover rengi */
+    --bg-light: #f4fbfb;
+    /* Açık turkuaz arka plan tonu */
     --bg-white: #ffffff;
     --text-main: #1f2937;
     --text-muted: #4b5563;
     --border-color: #e5e7eb;
-    --shadow-sm: 0 2px 8px rgba(0, 151, 167, 0.05); /* Yumuşak gölge */
-    --shadow-md: 0 10px 30px rgba(0, 151, 167, 0.08); /* Kart gölgesi */
-    --border-radius: 12px;     /* Öğrenci projesi için sade köşe yumuşatması */
+    --shadow-sm: 0 2px 8px rgba(0, 151, 167, 0.05);
+    /* Yumuşak gölge */
+    --shadow-md: 0 10px 30px rgba(0, 151, 167, 0.08);
+    /* Kart gölgesi */
+    --border-radius: 12px;
+    /* Öğrenci projesi için sade köşe yumuşatması */
     --transition: all 0.25s ease-in-out;
 }
 
@@ -26,8 +32,15 @@
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 html {
@@ -172,7 +185,7 @@ body {
     text-align: center;
     padding-top: 100px;
     background: radial-gradient(circle at top right, rgba(0, 151, 167, 0.1), transparent 50%),
-                radial-gradient(circle at bottom left, rgba(0, 96, 100, 0.05), transparent 50%);
+        radial-gradient(circle at bottom left, rgba(0, 96, 100, 0.05), transparent 50%);
     position: relative;
     overflow: hidden;
 }
@@ -236,7 +249,7 @@ body {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 30px;
 }
 
@@ -265,17 +278,10 @@ body {
     border-radius: 50%;
 }
 
-.html-css-icon {
-    color: var(--primary-color);
-    background-color: rgba(0, 151, 167, 0.05);
-}
-
-.python-icon {
-    color: var(--primary-color);
-    background-color: rgba(0, 151, 167, 0.05);
-}
-
-.csharp-icon {
+.html-css-icon,
+.python-icon,
+.csharp-icon,
+.sql-icon {
     color: var(--primary-color);
     background-color: rgba(0, 151, 167, 0.05);
 }
@@ -300,7 +306,7 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
 }
 
@@ -424,12 +430,21 @@ body {
     box-shadow: 0 0 0 4px rgba(0, 151, 167, 0.15);
 }
 
-/* --- Footer --- */
+/* --- Footer & Sosyal Medya İkonları Tasarımı --- */
 .footer {
     background-color: var(--bg-white);
-    padding: 30px 0;
-    text-align: center;
+    padding: 35px 0;
     border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
 }
 
 .footer p {
@@ -437,16 +452,34 @@ body {
     color: var(--text-muted);
 }
 
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icon {
+    color: var(--text-muted);
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
 /* --- Mobil Uyumlu Medya Sorguları --- */
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Basitlik ve ödev doğallığı açısından mobil menü gizlenir veya basitleştirilir */
+        display: none;
     }
-    
+
     .hero-content h1 {
         font-size: 36px;
     }
-    
+
     .contact-wrapper {
         padding: 24px;
     }
